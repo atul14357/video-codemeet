@@ -1,6 +1,7 @@
 import React from "react";
-import { Paper, makeStyles, Button } from "@material-ui/core";
-import { createTheme, ThemeProvider } from "@material-ui/core/styles";
+import { Paper, Button } from "@mui/material";
+import { createTheme, ThemeProvider } from "@mui/material/styles";
+import {makeStyles} from "@mui/styles"
 import { useNavigate } from "react-router-dom";
 
 // stylings for the page

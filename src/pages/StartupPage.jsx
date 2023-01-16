@@ -1,15 +1,15 @@
 import React, { useContext, useState } from "react";
 import {
   Paper,
-  makeStyles,
   TextField,
   Button,
   Snackbar,
-} from "@material-ui/core";
-import { createTheme, ThemeProvider } from "@material-ui/core/styles";
+} from "@mui/material";
+import { createTheme, ThemeProvider } from "@mui/material/styles";
+import {makeStyles} from "@mui/styles"
 import { useNavigate } from "react-router-dom";
 import { MeetContext } from "../context/MeetContext";
-import MuiAlert from "@material-ui/lab/Alert";
+import MuiAlert from "@mui/lab/Alert";
 import { generateString } from "../helper/generateRandomString";
 
 // Alert when the user hasn't filled up their name
