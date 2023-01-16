@@ -1,25 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { MeetProvider } from "./context/MeetContext";
+import MeetPage from "./pages/MeetPage";
+import StartupPage from "./pages/StartupPage";
+import ThankYou from "./pages/ThankyouPage";
 
-function App() {
+import "./styles/custom.css";
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <MeetProvider>
+      <BrowserRouter>
+        <Routes>
+          <Route exact path="/" element={<StartupPage />}  ></Route>
+          <Route path="/meet/:id" element={<MeetPage />}  ></Route>
+          <Route path="/thank-you" element={<ThankYou />} ></Route>
+        </Routes>
+      </BrowserRouter>
+    </MeetProvider>
   );
-}
+};
 
 export default App;
