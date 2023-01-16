@@ -2,6 +2,8 @@ import React, { useEffect, useCallback, useContext } from "react";
 import { useNavigate,useParams } from "react-router-dom";
 import { MeetContext } from "../context/MeetContext";
 
+import "../../src/styles/custom.css";
+
 const MeetPage = () => {
   //AS OF NOW DOMAIN WOULD BE JITSI'S AS WE ARE STILL USING THIER SERVERS
   const domain = "meet.jit.si";
@@ -18,7 +20,7 @@ const MeetPage = () => {
     const options = {
       roomName: id,
       width: "100%",
-      height: "100%",
+    //   height: '100vh',
       configOverwrite: { prejoinPageEnabled: false },
       interfaceConfigOverwrite: {
         // overwrite interface properties if you want
@@ -84,7 +86,7 @@ const MeetPage = () => {
   };
 
   return (
-    <div>
+    <div style={{height: "100vh"}}>
       <header
         style={{
           backgroundColor: "rgb(10, 25, 41)",
@@ -94,7 +96,7 @@ const MeetPage = () => {
       >
         <p style={{ margin: 0, padding: 10 }}>Meeting name</p>
       </header>
-      <div id="jitsi-iframe" style={{ marginBottom: 0 }}></div>
+      <div id="jitsi-iframe" style={{ marginBottom: 0 , height:"100%"}}></div>
 
     </div>
   );
